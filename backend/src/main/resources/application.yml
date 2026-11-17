@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ai-interview-assistant-backend
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ai_interview_assistant
+      auto-index-creation: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: 86400000 # 24 hours
+  openai:
+    api-key: ${OPENAI_API_KEY:}
+    api-url: "https://api.openai.com/v1/chat/completions"
+    model: "gpt-4o-mini"
+  cors:
+    allowed-origins:
+      - "http://localhost:5173"
+      - "http://localhost:3000"
+      - "http://127.0.0.1:5173"
+      - "http://127.0.0.1:3000"
+
+logging:
+  level:
+    com.aiinterview: DEBUG
+    org.springframework.data.mongodb: INFO
+    org.springframework.security: INFO

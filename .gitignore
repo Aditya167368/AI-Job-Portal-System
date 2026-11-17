@@ -1,0 +1,12 @@
+.idea/
+*.iml
+
+backend/target/
+frontend/node_modules/
+frontend/dist/
+
+.env
+.env.*
+!.env.example
+
+AI-Job-Portal-System/
